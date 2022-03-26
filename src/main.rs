@@ -54,7 +54,11 @@ fn print_symbol(filepath: PathBuf, symbol_name: &str) {
             let name_str = std::str::from_utf8(name).unwrap();
             outbuff = name_str.to_string();
         }
-
+        if symbol_name.to_string().starts_with("Java") {
+            if !outbuff.starts_with("Java_") {
+                continue;
+            }
+        }
         if outbuff.contains(symbol_name) {
             let out = outbuff.replace(symbol_name, &format!("{}", symbol_name).red().to_string());
             println!("{}\t{}", format!("{}", filename).blue(), out);
