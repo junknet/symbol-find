@@ -1,0 +1,14 @@
+[package]
+name = "symbol-find"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+object = "0.28.3"
+cpp_demangle = "0.3.5"
+walkdir = "2.3.2"
+threadpool = "1.8.1"
+colored = "2.0.0"
+clap = { version = "3.1.6", features = ["derive"] }
+num_cpus = "1.13.1"
